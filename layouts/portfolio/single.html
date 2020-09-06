@@ -1,0 +1,73 @@
+{{ define "main" }}
+
+{{ partial "blog-post-title.html" . }}
+
+<!-- portfolio -->
+<section class="section">
+  <div class="container bg-dark p-3">
+    <div class="row mt-1">
+      <div class="col-lg-5 mb-5">
+        <img src="{{ .Params.image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+      </div>
+      <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
+        <div class="row mx-0">
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-calendar"></i>
+              <div class="ml-3">
+                <h4>Date</h4>
+                <p>{{ .PublishDate.Format "Jan 02, 2006" }}</p>
+              </div>
+            </div>
+          </div>
+          <!--{{ with .Params.Client}}
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-user"></i>
+              <div class="ml-3">
+                <h4>Client</h4>
+                <p>{{. | markdownify}}</p>
+              </div>
+            </div>
+          </div> 
+          {{ end }} -->
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-folder"></i>
+              <div class="ml-3">
+                <h4>Categories</h4>
+                <p>{{ delimit .Params.categories ", " | title }}</p>
+              </div>
+            </div>
+          </div>
+          {{ with .Params.project_url}}
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-github"></i>
+              <div class="ml-3">
+                <h4>Project Link</h4>
+                <p>{{. | markdownify}}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-pencil-alt"></i>
+              <div class="ml-3">
+                <h4>Built with</h4>
+                <p>{{ delimit .Params.tech ", " | title }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-11">
+        <div class="content">{{.Content}}</div>
+      </div>
+  </div>
+</section>
+<!-- /portfolio -->
+
+{{ end }}

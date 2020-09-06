@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact me</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <form action="https://getform.io/f/8f075f58-da84-4334-9294-04c91318ae22" method="POST">
+
+            <div class="row">
+
+              <div class="col-md-6"> 
+                <div class="form-group">
+                  <input class="form-control" type="text" name="name" placeholder="Your Name *" required="required">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="email" name="email" placeholder="Your Email *" required="required">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">   
+                  <textarea class="form-control" name="message" placeholder="Your Message *"></textarea>
+                </div>
+              </div>
+                <div class="col-lg-12 text-center">
+                  <button class="btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Follow me on Social</h2>
+      </div>
+      <div class="col-12">
+        <ul class="list-inline social-icons text-center">
+          {{ range site.Params.social }}
+          <li class="list-inline-item"><a href="{{.link}}"><i class="{{.icon}}"></i></a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

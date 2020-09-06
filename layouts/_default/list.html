@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+  {{ partial "page-title.html" . }}
+
+  <!-- blog -->
+
+
+    <section class="recent-posts">
+      <div class="container">
+        <div class="row mb-5">
+        <div class="col-12">
+          <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
+            <label class="btn btn-sm btn-primary active">
+              <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+            </label>
+            {{ $categories := slice }}
+            {{ range .Data.Pages }}
+            {{ range .Params.categories }}
+            {{ $categories = $categories | append . }}
+            {{ end }}
+            {{ end }}
+            {{ range ( $categories | uniq ) }}
+            <label class="btn btn-sm btn-primary">
+              <input type="radio" name="shuffle-filter" value="{{ . | urlize }}" />{{ . | humanize }}
+            </label>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="row shuffle-wrapper">
+          {{ range .Paginator.Pages }}
+            {{ .Render "post" }}
+          {{ end }}
+          
+      </div>
+    
+    </section>
+    {{ partial "pagination" .}}
+    
+  <!-- /blog -->
+{{ end }}
