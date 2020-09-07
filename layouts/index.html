@@ -4,13 +4,15 @@
   <section class="hero-area bg-primary overflow-hidden" id="parallax">
   <div class="row">
     <div class="col-md-auto">
-      <!-- social icon -->
+      <!-- social icons -->
       <ul class="list-unstyled ml-5 mt-3 position-relative">
         {{ range site.Params.social }}
         <li class="mb-3"><a class="text-white" href="{{.URL | safeURL }}"><i class="{{.icon}}"></i></a></li>
         {{ end }}
       </ul>
-    <!-- /social icon -->
+    <!-- /social icons -->
+    
+    <!-- TITLE ON THE PAGE-->
     </div>
         <div class="col-lg-11 mx-auto">
           <h1 class="text-white font-tertiary">{{ site.Data.homepage.banner.title | safeHTML }}</h1>

@@ -443,7 +443,7 @@ textarea.form-control {
 }
 
 .navigation.nav-bg {
-  background-color: var(--primary-color);
+  background-color: #222;/*var(--primary-color);*/
   padding: 15px 100px
 }
 
@@ -467,7 +467,7 @@ textarea.form-control {
 }
 
 .navbar .nav-item.active .nav-link{
-  color: #000;
+  color: rgb(223, 43, 103);
 }
 
 .navbar-dark .navbar-nav .nav-link {
