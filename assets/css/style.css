@@ -440,6 +440,7 @@ textarea.form-control {
 .navigation {
   padding: 40px 130px;
   transition: .3s ease
+  background-color: #222;
 }
 
 .navigation.nav-bg {
@@ -791,7 +792,8 @@ blockquote {
 
 .page-title-alt .container {
   position: relative;
-  z-index: 1
+  z-index: 1;
+  background-color: #222;
 }
 
 .page-title-alt .bg-shape-1 {
