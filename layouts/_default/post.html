@@ -1,10 +1,12 @@
 <div class="col-lg-4 col-sm-6 mb-4 shuffle-item" 
 data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
   <article class="card shadow">
-    <img class="rounded card-img-top" src="{{.Params.Image | relURL}}" alt="{{.Title }}">
-    <div class="card-body bg-dark">
-      <h4 class="card-title"><a class="text-light" href="{{.Permalink}}">{{.Title }}</a>
+    <!--<img class="rounded card-img-top" src="{{.Params.Image | relURL}}" alt="{{.Title }}">-->
+    <div class="card-header">
+       <h4 class="card-title"><a class="text-light" href="{{.Permalink}}">{{.Title }}</a>
       </h4>
+    </div>
+    <div class="card-body bg-dark"> 
       <p class="card-text text-summary">{{.Summary}}</p>
       <a href="{{.Permalink}}" class="btn btn-sm btn-primary">Read More</a>
     </div>
