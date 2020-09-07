@@ -439,13 +439,13 @@ textarea.form-control {
 
 .navigation {
   padding: 40px 130px;
-  transition: .3s ease
+  transition: .3s ease;
   background-color: #222;
 }
 
 .navigation.nav-bg {
   background-color: #222;/*var(--primary-color);*/
-  padding: 15px 100px
+  padding: 15px 100px;
 }
 
 @media(max-width:991px) {
