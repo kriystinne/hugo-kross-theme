@@ -43,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-color);
+  color: white;
   font-family: roboto, sans-serif;
   line-height: 1.2
 }
@@ -918,7 +918,7 @@ blockquote {
   min-width: 90px;
   line-height: 90px;
   background-color: black;
-  color: var(--primary-color);
+  color: white;
   border-radius: 50%;
   text-align: center;
   display: block;
