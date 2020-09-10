@@ -129,6 +129,10 @@ h6,
   box-shadow: none;
 }
 
+.btn-xs a{
+  color: white;
+}
+
 .btn-x {
   padding: 5px 10px;
   font-size: 30px
