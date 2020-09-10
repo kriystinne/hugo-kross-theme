@@ -1,17 +1,14 @@
 {{ define "main" }}
 
-  {{ partial "page-title.html" . }}
 
   <!-- blog -->
-
-
-    <section class="recent-posts">
+    <section class="page-title-alt position-relative overflow-hidden">
       <div class="container">
         <div class="row mb-5">
         <div class="col-12">
           <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
             <label class="btn btn-sm btn-primary active">
-              <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+              <input type="radio" name="filter" value="all" checked="checked" />All
             </label>
             {{ $categories := slice }}
             {{ range .Data.Pages }}
@@ -34,6 +31,7 @@
             {{ .Render "post" }}
           {{ end }}
           
+      </div>
       </div>
     
     </section>

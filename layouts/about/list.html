@@ -1,9 +1,9 @@
 {{ define "main" }}
 
 <!-- page title -->
-<section class="page-title-alt bg-dark position-relative overflow-hidden">
+<section class="page-title-alt bg-about position-relative overflow-hidden">
   <div class="container">
-    <div class="row">
+    <div class="row bg-about">
       <div class="col-12">
         <h1 class="text-white font-tertiary">{{ .Title }}</h1>
       </div>
@@ -22,14 +22,14 @@
 <!-- about -->
 <section class="section pt-5">
   <div class="container">
-    <div class="row">
+    <div class="row bg-about">
       <div class="col-md-8">
         {{ .Content }}
       </div>
       <div class="col-md-4 text-center drag-lg-top">
         <div class="shadow-down mb-4">
           <img src="{{.Params.author_image | absURL }}" alt="author"
-            class="img-fluid w-100 rounded-lg border-thick border-white">
+            class="img-fluid w-100 rounded-lg border-white">
         </div>
        <!-- <img src="{{.Params.author_signature | absURL }}" alt="signature" class="img-fluid">
         <h4>{{ site.Params.Author }}</h4> -->

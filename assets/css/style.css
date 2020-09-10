@@ -43,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: white;
+  color: var(--primary-color);
   font-family: roboto, sans-serif;
   line-height: 1.2
 }
@@ -108,7 +108,7 @@ h6,
 }
 
 .btn:focus {
-  outline: 0;
+  outline: 1;
   box-shadow: none !important
 }
 
@@ -126,9 +126,15 @@ h6,
   font-size: 15px
 }
 
+.btn-x {
+  padding: 5px 10px;
+  font-size: 30px
+}
+
 .btn-primary {
   background: var(--primary-color);
-  color: #fff
+  color: #fff;
+  box-shadow: none;
 }
 
 .btn-primary.active {
@@ -183,10 +189,23 @@ body {
   justify-content: center
 }
 
-ol,
+ol {
+  list-style-type: number;
+  margin: 0;
+}
 ul {
-  list-style-type: none;
-  margin: 0
+  list-style-type: disc;
+  margin: 0;
+}
+
+.heroimg {
+  vertical-align: middle;
+  border: 0;
+  width: 100%;
+  height: auto;
+  padding-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 img {
@@ -194,7 +213,15 @@ img {
   border: 0
 }
 
-a,
+.jumbotron a {
+  border: 1px;
+  border-color: #1C9963 !important;
+}
+
+table, th, td {
+  border: 1px solid grey;
+}
+
 a:hover,
 a:focus {
   text-decoration: none
@@ -213,20 +240,22 @@ select:focus {
   outline: 0
 }
 
-a.text-dark:hover {
-  color: var(--primary-color) !important
+a:link {
+  color: #21bac5;
 }
 
 a:hover {
-  color: var(--primary-color)
+  color: grey; 
 }
+
+
 
 .slick-slide {
   outline: 0
 }
 
 .section {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 80px
 }
 
@@ -284,8 +313,12 @@ a:hover {
   color: #000 !important
 }
 
+.text-title {
+  color: var(--primary-color);
+}
+
 .text-light {
-  color: #AAABB8 !important
+  color: white !important
 }
 
 .text-summary {
@@ -364,6 +397,10 @@ a:hover {
   background-color: #222 !important
 }
 
+.bg-about {
+  background-color: black;
+}
+
 .icon {
   font-size: 45px
 }
@@ -423,13 +460,16 @@ textarea.form-control {
 }
 
 .card {
-  border: 0;
+  border: 1;
+  border-color: var(--primary-color);
   background-color: black;
+  border-radius: 10px;
 
 }
 
 .card-header {
-  border: 0;
+  border-top: 1;
+  color: var(--primary-color);
 }
 
 .card-footer {
@@ -438,13 +478,13 @@ textarea.form-control {
 }
 
 .navigation {
-  padding: 40px 130px;
+  padding: 0px 150px;
   transition: .3s ease;
-  background-color: #222;
+  background-color: black;
 }
 
 .navigation.nav-bg {
-  background-color: #222;/*var(--primary-color);*/
+  background-color: black;/*var(--primary-color);*/
   padding: 15px 100px;
 }
 
@@ -468,16 +508,18 @@ textarea.form-control {
 }
 
 .navbar .nav-item.active .nav-link{
-  color: rgb(223, 43, 103);
+  color: white;
 }
 
+
 .navbar-dark .navbar-nav .nav-link {
-  color: #fff;
+  color: var(--primary-color);
 }
 
 .hero-area {
-  padding: 250px 0 200px;
-  position: relative
+  padding: 280px 0 200px;
+  position: relative;
+  background-color: black;
 }
 
 @media(max-width:767px) {
@@ -716,12 +758,22 @@ textarea.form-control {
 }
 
 .footer-section {
-  padding-top: 200px
+  padding-top: 50px;
+  position: fixed;
+  padding-bottom: 100px;
+}
+
+/*.footer-copyright {
+  position: fixed;
+  height: 50px;
+  bottom: 10px;
+  width: 100%;
+  background-color: black;
 }
 
 .section-on-footer {
-  margin-bottom: -250px
-}
+  margin-top 100px
+}*/
 
 .shadow-down {
   position: relative
@@ -730,7 +782,7 @@ textarea.form-control {
 .shadow-down::before {
   position: absolute;
   content: "";
-  box-shadow: 0 0 5px 5px rgba(224, 241, 255, .34);
+  box-shadow: 0 0 0px 0px rgba(224, 241, 255, .34);
   height: 100%;
   width: 100%;
   left: 0;
@@ -765,15 +817,15 @@ blockquote {
 
 .content strong {
   font-family: roboto, sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: #000;
+  /*font-size: 22px;
+  font-weight: 400;*/
+  color: white;
   display: inherit;
-  line-height: 1.5
+  /*line-height: 2.5*/
 }
 
 .page-title-alt {
-  padding: 350px 0 70px
+  padding: 150px 0 70px
 }
 
 .border-thick {
@@ -793,7 +845,7 @@ blockquote {
 .page-title-alt .container {
   position: relative;
   z-index: 1;
-  background-color: #222;
+  background-color: black;
 }
 
 .page-title-alt .bg-shape-1 {
@@ -917,8 +969,8 @@ blockquote {
   height: 90px;
   min-width: 90px;
   line-height: 90px;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: black;
   border-radius: 50%;
   text-align: center;
   display: block;

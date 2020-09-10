@@ -1,9 +1,7 @@
 {{ define "main" }}
 
-{{ partial "page-title.html" . }}
-
 <!-- portfolio -->
-<section class="section">
+<section class="page-title-alt position-relative overflow-hidden">
   <div class="container">
     <div class="row mb-5">
       <div class="col-12">
@@ -25,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="row shuffle-wrapper">
+    <div class="row"> <!--shuffle-wrapper">-->
       {{ range .Paginator.Pages }}
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
         <div class="position-relative rounded hover-wrapper">
