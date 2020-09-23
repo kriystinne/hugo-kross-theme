@@ -37,7 +37,7 @@ p {
   font-family: roboto, sans-serif
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
@@ -46,11 +46,13 @@ h6 {
   color: var(--primary-color);
   font-family: roboto, sans-serif;
   line-height: 1.2
-}
+}*/
 
 h1,
 .h1 {
-  font-size: 80px
+  font-size: 80px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 @media(max-width:991px) {
@@ -63,7 +65,9 @@ h1,
 
 h2,
 .h2 {
-  font-size: 60px
+  font-size: 60px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 @media(max-width:991px) {
@@ -76,22 +80,30 @@ h2,
 
 h3,
 .h3 {
-  font-size: 40px
+  font-size: 35px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 h4,
 .h4 {
-  font-size: 22px
+  font-size: 22px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 h5,
 .h5 {
-  font-size: 18px
+  font-size: 18px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 h6,
 .h6 {
-  font-size: 14px
+  font-size: 14px;
+  color: var(--primary-color);
+  font-family: roboto, sans-serif;
 }
 
 .btn {
@@ -129,12 +141,16 @@ h6,
   box-shadow: none;
 }
 
-.btn-xs a.active{
+.btn-xs:active{
   color: white;
 }
 
 .btn-xs a:visited{
-  color: #c7c7c7
+  color: #c7c7c7;
+}
+
+.btn-xs a:link{
+  color: white;
 }
 
 .btn-x {
@@ -328,9 +344,9 @@ a:hover {
   color: var(--primary-color);
 }
 
-.text-light {
+/*.text-light {
   color: white !important
-}
+}*/
 
 .text-summary {
   color: #999;
@@ -831,7 +847,7 @@ blockquote {
   /*font-size: 22px;
   font-weight: 400;*/
   color: white;
-  display: inherit;
+  /*display: inherit;
   /*line-height: 2.5*/
 }
 
@@ -1029,3 +1045,6 @@ blockquote {
   color: var(--primary-color);
 }
 
+mark {
+  background-color: var(--primary-color);
+}
