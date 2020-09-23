@@ -12,6 +12,9 @@
           <h3>{{ .Title }}</h3>
           <p class="font-secondary">Published on {{ .PublishDate.Format "Jan 02, 2006" }}</p>
           <p class="font-secondary">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes </p>
+          {{if isset .Params "github"}}
+          <i class="ti-github"> {{ .Params.github | markdownify}}</i>
+          {{end}}
         </div>
         <div class="col-lg-9">
           <div class="content text-light">
@@ -28,7 +31,12 @@
       <a class="col-md-5 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
     {{end}}
   </div>
-                    <!-- End Next and PrevPage -->
+      <!-- End Next and PrevPage -->
+
+      <!-- DISQUS COMMENTS -->
+      {{ partial "comments" . }}
+
+      {{ partial "comments-counter" . }}
     </div>
   </section>
 
