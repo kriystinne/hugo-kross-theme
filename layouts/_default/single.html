@@ -21,14 +21,23 @@
             {{.Content }}
           </div>
         </div>
+        <!-- CONDITIONAL TABLE OF CONTENTS-->
+        {{ if .Params.toc }}
+        <div class="col-lg-3 text-left px-1">
+        <h5 style="text-align:center">On this page</h5>
+            {{ .TableOfContents }}
+        </div>
+      {{ end }}
+        
       </div>
+      
       <!-- Next and PrevPage inside current section -->
-  <div class="row justify-content-center py-5">
+  <div class="row content-center py-5">
     {{with .NextInSection}}
       <a class=" col-md-5" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
     {{end}}
     {{with .PrevInSection}}
-      <a class="col-md-5 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
+      <a class="col-md-1 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
     {{end}}
   </div>
       <!-- End Next and PrevPage -->
@@ -38,6 +47,7 @@
 
       {{ partial "comments-counter" . }}
     </div>
+ 
   </section>
 
 
