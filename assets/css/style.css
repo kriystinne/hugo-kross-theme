@@ -139,6 +139,7 @@ h6,
   background: var(--primary-color);
   color: #fff;
   box-shadow: none;
+  border-radius: 5px;
 }
 
 .btn-xs:active{
@@ -218,11 +219,11 @@ body {
 
 ol {
   list-style-type: number;
-  margin: 0;
+  margin: 1;
 }
 ul {
   list-style-type: disc;
-  margin: 0;
+  margin: 1;
 }
 
 .heroimg {
