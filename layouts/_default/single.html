@@ -16,14 +16,14 @@
           <i class="ti-github"> {{ .Params.github | markdownify}}</i>
           {{end}}
         </div>
-        <div class="col-lg-9">
-          <div class="content">
+        <div class="col-lg-9 ">
+          <div > <!--class="content"-->
             {{.Content }}
           </div>
         </div>
         <!-- CONDITIONAL TABLE OF CONTENTS-->
         {{ if .Params.toc }}
-        <div class="col-lg-3 text-left px-1">
+        <div class="col-lg-3 text-justify-content-end px-5">
         <h5 style="text-align:center">On this page</h5>
             {{ .TableOfContents }}
         </div>
@@ -32,20 +32,23 @@
       </div>
       
       <!-- Next and PrevPage inside current section -->
-  <div class="row content-center py-5">
-    {{with .NextInSection}}
-      <a class=" col-md-5" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
-    {{end}}
-    {{with .PrevInSection}}
-      <a class="col-md-1 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
-    {{end}}
-  </div>
-      <!-- End Next and PrevPage -->
+    <div class="row content-center py-5">
+      {{with .NextInSection}}
+        <a class=" col-md-5 px-5" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
+      {{end}}
+      {{with .PrevInSection}}
+        <a class="col-md-1 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
+      {{end}}
+    </div>
 
-      <!-- DISQUS COMMENTS -->
-      {{ partial "comments" . }}
+      <div>
+          <!-- End Next and PrevPage -->
 
-      {{ partial "comments-counter" . }}
+          <!-- DISQUS COMMENTS -->
+          {{ partial "comments" . }}
+
+          {{ partial "comments-counter" . }}
+        </div>
     </div>
  
   </section>

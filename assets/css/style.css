@@ -12,17 +12,24 @@ VERSION: Versoin Number
   font-display: swap
 }
 
+/* VERTICAL LINE CLASS FOR TOC */
+
+
 /* HORIZONTAL BORDER color and width*/
 hr {
   display: block; 
-  margin-block-start: 0.5em; 
-  margin-block-end: 0.5em; 
+  /*margin-block-start: 0.5em; 
+  margin-block-end: 0.5em; */
   margin-left: auto; 
   margin-right: auto; 
-  overflow: hidden; 
-  border-style: inset; 
-  border-width: 1px;
+  margin-top: 1px;
+  overflow: hidden;
+  height: 1.2px;
+  /*border-style: inset; 
+  border-width: 1px;*/
+  border: none;
   background-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 @media screen and (prefers-color-scheme: light) {
@@ -43,9 +50,9 @@ body {
 
 p {
   font-weight: 400;
-  color: #696767;
+  color: #ebe4e4;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
   font-family: roboto, sans-serif
 }
 
@@ -229,14 +236,31 @@ body {
   justify-content: center
 }
 
+ul, li, ol, dl, dd {
+  color: #ebe4e4;
+}
 ol {
-  list-style-type: number;
-  margin: 0;
+  list-style: number;
+  margin: 1rem;
 }
+
+li {
+  line-height: 1.5;
+}
+
 ul {
-  list-style-type: disc;
-  margin: 0;
+  list-style: none; /* Remove default bullets */
 }
+
+ul li::before{
+  content: "\2022";   /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--primary-color); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
 
 .heroimg {
   vertical-align: middle;
@@ -1060,4 +1084,5 @@ blockquote {
 
 mark {
   background-color: var(--primary-color);
+  color: #ebe4e4;
 }
