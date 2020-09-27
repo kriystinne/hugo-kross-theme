@@ -4,18 +4,26 @@
 {{ partial "math.html" . }}
 {{ end }}
 
+<section class="section-breadcrumbs">
+{{partial "breadcrumbs.html" . }}
+</section>
+
+{{partial "blog-post-title.html" . }}
   <section class="section">
     <div class="container bg-about py-3">
-      <div class="row justify-content-center py-5">
-        <div class="col-lg-9 text-center mb-4">
+       <div class="row justify-content-center py-5">
+        <!--<div class="col-lg-9 text-center mb-4">-->
           <!--<img src="{{.Params.image | absURL }}" alt="{{.Title}}" class="img-fluid rounded mb-4">-->
-          <h3>{{ .Title }}</h3>
-          <p class="font-secondary">Published on {{ .PublishDate.Format "Jan 02, 2006" }}</p>
-          <p class="font-secondary">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes </p>
+         <!-- <h3>{{ .Title }}</h3>
+          <p class="font-secondary">
+          <i class="ti-calendar"> {{ .PublishDate.Format "Jan 02, 2006" }}</i> &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="ti-timer"> {{ math.Round (div (countwords .Content) 220.0) }} minutes </i>
           {{if isset .Params "github"}}
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <i class="ti-github"> {{ .Params.github | markdownify}}</i>
           {{end}}
-        </div>
+          </p>
+        </div> -->
         <div class="col-lg-9 ">
           <div > <!--class="content"-->
             {{.Content }}
@@ -23,33 +31,37 @@
         </div>
         <!-- CONDITIONAL TABLE OF CONTENTS-->
         {{ if .Params.toc }}
-        <div class="col-lg-3 text-justify-content-end px-5">
-        <h5 style="text-align:center">On this page</h5>
+        <div class="col-lg-3 text-justify-content-end px-4">
+          <h5 style="text-align:center">On this page</h5>
             {{ .TableOfContents }}
         </div>
-      {{ end }}
+        {{ end }}
         
-      </div>
+    </div>
       
       <!-- Next and PrevPage inside current section -->
-    <div class="row content-center py-5">
-      {{with .NextInSection}}
-        <a class=" col-md-5 px-5" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
-      {{end}}
-      {{with .PrevInSection}}
-        <a class="col-md-1 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
-      {{end}}
+    <div class="row py-5">
+      <div class="col-md-6 text-left">
+        {{with .NextInSection}}
+          <a href="{{.Permalink}}"> &laquo; {{.Title}}</a>
+        {{end}}
+      </div>
+      <div class="col-md-6 text-right">
+        {{with .PrevInSection}}
+          <a href="{{.Permalink}}">{{.Title}} &raquo;</a>
+        {{end}}
+      </div>
     </div>
 
-      <div>
+    <div>
           <!-- End Next and PrevPage -->
 
           <!-- DISQUS COMMENTS -->
           {{ partial "comments" . }}
 
           {{ partial "comments-counter" . }}
-        </div>
     </div>
+   </div>
  
   </section>
 

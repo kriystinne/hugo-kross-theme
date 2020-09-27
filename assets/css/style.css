@@ -249,17 +249,10 @@ li {
 }
 
 ul {
-  list-style: none; /* Remove default bullets */
+  list-style: disc; /* Remove default bullets */
 }
 
-ul li::before{
-  content: "\2022";   /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: var(--primary-color); /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */ 
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
+
 
 
 .heroimg {
@@ -317,6 +310,14 @@ a:hover {
 .slick-slide {
   outline: 0
 }
+
+.section-breadcrumbs {
+  padding-top: 80px;
+  padding-bottom: 0px;
+  position: relative;
+  margin-left: 11em;
+}
+
 
 .section {
   padding-top: 50px;
@@ -568,13 +569,16 @@ textarea.form-control {
 .navbar .nav-item .nav-link {
   font-family: bwnistaint-xbd;
   text-transform: uppercase;
-  padding: 15px
+  padding: 15px;
 }
 
 .navbar .nav-item.active .nav-link{
   color: white;
 }
 
+ul.navbar-nav li.nav-item::before{
+  list-style-type: none;
+}
 
 .navbar-dark .navbar-nav .nav-link {
   color: var(--primary-color);
@@ -779,7 +783,16 @@ textarea.form-control {
   font-weight: 400
 }
 
-.testimonial-bg-shapes .container {
+/*ul li::before{
+  content: "\2022";   
+  color: var(--primary-color);
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1em; 
+}*/
+
+/*.testimonial-bg-shapes .container {
   position: relative;
   z-index: 1
 }
@@ -819,7 +832,7 @@ textarea.form-control {
   position: absolute;
   right: 200px;
   bottom: -50px
-}
+}*/
 
 .footer-section {
   padding-top: 50px;
@@ -912,7 +925,7 @@ blockquote {
   background-color: black;
 }
 
-.page-title-alt .bg-shape-1 {
+/*.page-title-alt .bg-shape-1 {
   position: absolute;
   left: 0;
   top: 0;
@@ -949,6 +962,7 @@ blockquote {
   bottom: 100px;
   right: -100px
 }
+*/
 
 .page-title {
   padding: 250px 0 150px
@@ -959,7 +973,7 @@ blockquote {
   z-index: 1
 }
 
-.page-title .bg-shape-1 {
+/*.page-title .bg-shape-1 {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1002,6 +1016,7 @@ blockquote {
   right: -220px;
   bottom: -100px
 }
+*/
 
 .filter-controls li {
   cursor: pointer

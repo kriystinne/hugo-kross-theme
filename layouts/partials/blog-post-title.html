@@ -1,7 +1,17 @@
 <section class="page-title bg-about position-relative overflow-hidden">
-  <div class="row">
+  <div class="container">
+    <div class="row">
       <div class="col-12 text-center">
-        <h2 class="text-title font-tertiary">{{.Title}}</h2>
+        <h3>{{ .Title }}</h3>
+          <p class="font-secondary">
+          <i class="ti-calendar"> {{ .PublishDate.Format "Jan 02, 2006" }}</i> &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="ti-timer"> {{ math.Round (div (countwords .Content) 220.0) }} minutes </i>
+          {{if isset .Params "github"}}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="ti-github"> <a href = {{ .Params.github}}> GitHub </a> </i> 
+          {{end}}
+          </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
