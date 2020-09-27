@@ -202,7 +202,7 @@ h6,
   box-shadow: none !important
 }
 
-.btn-transparent {
+.btn-transparent a:active{
   background: transparent;
   color: var(--primary-color);
   font-weight: 700
@@ -435,8 +435,9 @@ a:hover {
 }
 
 .rounded-lg {
-  border-radius: 15px
+  border-radius: 15px;
 }
+
 
 .overflow-hidden {
   overflow: hidden
@@ -520,6 +521,8 @@ a:hover {
   box-shadow: none !important
 }
 
+
+
 textarea.form-control {
   height: 120px
 }
@@ -551,6 +554,15 @@ textarea.form-control {
 .navigation.nav-bg {
   background-color: black;/*var(--primary-color);*/
   padding: 15px 100px;
+}
+
+.dropdown-item {
+  background-color: black;
+  color: var(--primary-color);
+}
+
+.dropdown-menu {
+  background-color: black;
 }
 
 @media(max-width:991px) {
@@ -735,20 +747,25 @@ ul.navbar-nav li.nav-item::before{
 }
 
 .hover-shadow:hover {
-  box-shadow: 0 18px 40px 8px rgba(224, 241, 255, .54) !important
+  box-shadow: 0 8px 8px 8px rgba(189, 87, 236, 0.54) !important
 }
 
 .hover-wrapper {
-  overflow: hidden
+  overflow: hidden;
+}
+
+.shuffle-item {
+  border-block: 1px;
+  border-block-color: blueviolet;
 }
 
 .hover-wrapper img {
   transition: .3s ease;
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .hover-wrapper:hover img {
-  transform: scale(1)
+  transform: scale(1);
 }
 
 .hover-wrapper:hover .hover-overlay {
@@ -766,7 +783,7 @@ ul.navbar-nav li.nav-item::before{
   background: rgba(0, 0, 0, .3);
   opacity: 0;
   visibility: hidden;
-  transition: .3s ease
+  transition: .3s ease;
 }
 
 .hover-content {
@@ -775,7 +792,7 @@ ul.navbar-nav li.nav-item::before{
   transform: translateY(-50%);
   left: 0;
   right: 0;
-  text-align: center
+  text-align: center;
 }
 
 .testimonial-content strong {
