@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ partial "blog-post-title.html" . }}
+{{ partial "page-title.html" . }}
 
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
@@ -94,8 +94,8 @@
         </div>
       
       <!-- CONTENT -->
-      <div class="col-lg-11">
-        <div class="content">{{.Content}}</div>
+      <div class="col-lg-12">
+        <div>{{.Content}}</div>
       </div>
   </div>
   </div>

@@ -8,7 +8,7 @@ data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}}
     </div>
     <div class="card-body"> 
       <p class="card-text text-summary">{{.Summary}}</p>
-      <a class="btn btn-xs text-light" href="{{.Permalink}}">Read More</a>
+      <a rel="canonical" class="btn btn-xs text-light" href="{{.Permalink}}">Read More</a>
     </div>
   </article>
 </div>

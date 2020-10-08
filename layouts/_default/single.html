@@ -24,17 +24,29 @@
           {{end}}
           </p>
         </div> -->
-        <div class="col-lg-9 ">
-          <div > <!--class="content"-->
-            {{.Content }}
-          </div>
-        </div>
+
         <!-- CONDITIONAL TABLE OF CONTENTS-->
         {{ if .Params.toc }}
-        <div class="col-lg-3 text-justify-content-end px-4">
-          <h5 style="text-align:center">On this page</h5>
-            {{ .TableOfContents }}
-        </div>
+          <div class="col-lg-9 ">
+            <div > <!--class="content"-->
+              {{.Content }}
+            </div>
+          </div>
+        
+        <!-- TOC placement-->
+          <div class="col-lg-3 text-justify-content-end px-4">
+            <h5 style="text-align:center">On this page</h5>
+              {{ .TableOfContents }}
+          </div>
+
+        <!-- ELSE LEAVE THE CONTENT AT COL-12-->
+        {{else if ne .Params.toc}}
+          <div class="col-lg-12 ">
+            <div > <!--class="content"-->
+              {{.Content }}
+            </div>
+          </div>
+        {{else}}
         {{ end }}
         
     </div>

@@ -26,7 +26,7 @@
     <div class="row shuffle-wrapper"> <!--shuffle-wrapper">-->
       {{ range .Paginator.Pages }}
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
-        <a href="{{ .Permalink }}" style="cursor:pointer;">
+        <a rel="canonical" href="{{ .Permalink }}" style="cursor:pointer;">
         <div class="position-relative rounded hover-wrapper" style = "border: 1px solid; border-color: var(--primary-color); border-radius: 5px;">
           <img src="{{.Params.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
           <!--<div class="hover-overlay">
