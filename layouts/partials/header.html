@@ -15,12 +15,14 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ site.BaseURL }}">{{ with site.Params.Home }} {{ . }} {{ end }}</a>
+          <a class="nav-link nav-item" href="{{ site.BaseURL }}">{{ with site.Menus.home }} {{ . }} {{ end }}</a>
         </li>
         {{ $current := . }}
         {{ range site.Menus.main }}
         {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
         {{ $active = or $active (eq .Name $current.Title) }}
+        {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog")) }}
+        {{ $active = or $active (and (eq .Name "Portfolio") (eq $current.Section "portfolio")) }}
         
         {{ if .HasChildren }}
         <li class="nav-item dropdown">
