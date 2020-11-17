@@ -47,6 +47,7 @@ body {
   color: #696767;
   background-color: black;
   height: 100%;
+
 }
 
 p {
@@ -867,11 +868,12 @@ ul.navbar-nav li.nav-item::before{
 
 
 .footer-copyright {
-  position: fixed;
+  position: relative;
   height: 50px;
-  bottom: 10px;
+  bottom: 5px;
   width: 100%;
   background-color: black;
+  margin-top: auto;
 }
 
 .section-on-footer {
